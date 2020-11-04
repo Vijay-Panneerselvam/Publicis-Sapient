@@ -29,9 +29,9 @@ export class LaunchSummaryComponent implements OnInit {
     });
   }
   getSpecificProgDtls(){
-    let lAdditionalAttrs = '';
+    let lAdditionalAttrs = '?';
     if(this.launch_year){
-      lAdditionalAttrs += "?launch_year="+this.launch_year;
+      lAdditionalAttrs += "&launch_year="+this.launch_year;
     }if(this.launch_success){
       lAdditionalAttrs += "&launch_success="+this.launch_success;
     }if(this.landing_success){
