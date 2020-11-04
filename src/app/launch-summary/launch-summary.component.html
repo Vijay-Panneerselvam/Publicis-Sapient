@@ -3,7 +3,7 @@
   <div class="jumbotron">
     <h2 style="padding-bottom :10px"><b>{{title}}</b></h2>
     <div class= "row">
-      <div class="col-lg-2 col-sm-3 ">
+      <div class="col-lg-2 col-sm-4 ">
         <div style="background-color: white; border-radius: 5px;">
           <h5 style="padding: 10px 15px 0;">Filters</h5>
           <div>
@@ -42,7 +42,7 @@
         </div>
         
       </div>
-      <div class="col-lg-10 col-sm-9">
+      <div class="col-lg-10 col-sm-8">
         <span *ngIf="RecordDtls.length > 0; else ShowMsg">
           <app-launch-program-dtls [RecsToLoad]="RecordDtls"></app-launch-program-dtls>   
         </span>

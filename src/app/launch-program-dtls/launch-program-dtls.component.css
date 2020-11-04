@@ -12,7 +12,7 @@ hr {
     min-height: 480px;
 }
 .LaunchImg{
-	width: 88%;
+	width: calc(100% - 30px);
     margin: 15px 0 8px;
     object-fit: contain;
     background-color: #f2f2f2;
