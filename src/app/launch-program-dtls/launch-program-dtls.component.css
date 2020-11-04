@@ -11,6 +11,13 @@ hr {
     border-radius: 5px;
     min-height: 480px;
 }
+.LaunchImg{
+	width: 88%;
+    margin: 15px 0 8px;
+    object-fit: contain;
+    background-color: #f2f2f2;
+    border: 0;
+}
 
 @media (min-width: 701px) and (max-width: 1025px)
  {
