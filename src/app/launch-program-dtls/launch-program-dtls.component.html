@@ -1,0 +1,28 @@
+
+   
+    <div *ngFor="let rec of RecsToLoad" class="detailsParCol">
+            
+        <div class="text-center"><img src='{{ rec.links.mission_patch }}' class="img-fluid img-thumbnail" style="width: 88%;margin: 15px 0 8px;object-fit: contain;
+                background-color: #f2f2f2;"  ></div>
+            <div style="padding: 15px;">
+                <b style="color: #48519c;">
+                    {{rec.mission_name +" #"}} {{rec.flight_number}}
+                </b>
+                <br/>
+                <b>Mission Ids:     </b> 
+                <li style="color:gray">{{rec.mission_id | slice:0:7}}</li>
+                <div>
+                    <b>Launch Year: </b> 
+                    <span style="color:gray">{{rec.launch_year }}</span>   
+                </div>
+                <div>
+                    <b>Successful Launch: </b> 
+                    <span style="color:gray">{{rec.launch_success }}</span>
+                </div>
+                <div>
+                    <b>Successful Landing: </b> 
+                    <span style="color:gray">{{rec.launch_landing }}</span>
+                </div>   
+            </div>         
+        </div>
+

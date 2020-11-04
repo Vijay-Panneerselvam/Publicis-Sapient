@@ -1,0 +1,63 @@
+
+<div class="container-fluid containerTemp">
+  <div class="jumbotron">
+    <h2 style="padding-bottom :10px">{{title}}</h2>
+    <div class= "row">
+      <div class="col-lg-2 col-sm-4 ">
+        <div style="background-color: white; border-radius: 5px;">
+          <h5 style="padding: 10px 15px 0;">Filters</h5>
+          <div>
+            <div class="text-center"><h6>Launch Year</h6><hr> </div>      
+                <span class="filterSec" *ngFor='let in of counter(13) ;let i = index; let odd = odd;'> 
+                    <button type="button" class="btn btn-success btn-sm" style="margin-top: 20px;" (click)="getlaunchYearRecs($event)">{{2008+i}}</button> 
+                    <span *ngIf="odd"><br/></span>
+                </span>      
+            </div> 
+            <br/>
+            <div>
+              <div class="text-center"><h6>Successful Launch</h6><hr></div>
+              <div>
+                <div class="filterSec">
+                  <button type="button" class="btn btn-success  btn-sm" (click)="getLaunchFlagRecs($event)">True</button>
+                </div>
+                <div class="filterSec">
+                  <button type="button" class="btn btn-success  btn-sm" (click)="getLaunchFlagRecs($event)">False</button>          
+                </div>
+              </div>
+            </div>
+            <br/>
+            <div>
+              <div class="text-center"><h6>Successful Landing</h6><hr></div>
+              
+              <div>
+                <div class="filterSec">
+                  <button type="button" class="btn btn-success  btn-sm" (click)="getLandingFlagRecs($event)">True</button>
+                </div>
+                <div class="filterSec">
+                  <button type="button" class="btn btn-success  btn-sm" (click)="getLandingFlagRecs($event)">False</button>
+                </div>
+              </div>
+              <br/>
+              <br/>
+            </div>
+        </div>
+        
+      </div>
+      <div class="col-lg-10 col-sm-8">
+        <span *ngIf="RecordDtls.length > 0; else ShowMsg">
+          <app-launch-program-dtls [RecsToLoad]="RecordDtls"></app-launch-program-dtls>   
+        </span>
+        <ng-template #ShowMsg>
+          <h3 style="padding-top: 25%;" class="text-center">No records found</h3>
+       </ng-template>
+         
+      </div>
+      </div>
+      <div class="footer text-center" style="font-size: 20px;padding-top: 20px;"><b>Developed by:</b> Vijay Panneerselvam</div>
+    </div>  
+    
+    <ngx-spinner bdColor="rgba(51, 51, 51, 0.8)" size="default" type="ball-spin-clockwise">  
+      <p style="color: white">Please Wait. </p>  
+      </ngx-spinner>
+    </div>
+      
