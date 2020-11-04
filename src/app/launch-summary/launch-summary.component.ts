@@ -12,7 +12,7 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
   styleUrls: ['./launch-summary.component.css']
 })
 export class LaunchSummaryComponent implements OnInit {
-  launch_year = '2008';
+  launch_year = '';
   launch_success = '';
   landing_success = '';
   RecordDtls:any = [];
@@ -70,6 +70,9 @@ export class LaunchSummaryComponent implements OnInit {
   });
   //this.getLaunchProg();
   if(this.orderObj.length > 0){
+	  this.launch_year = '';
+	  this.launch_success = '';
+	  this.landing_success = '';
     this.orderObj.filter(obj =>{
       if(obj.key == "launch_year"){
         this.launch_year = obj.value
