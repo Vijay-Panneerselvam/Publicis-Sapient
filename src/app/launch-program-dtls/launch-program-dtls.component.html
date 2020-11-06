@@ -2,7 +2,7 @@
    
     <div *ngFor="let rec of RecsToLoad" class="detailsParCol">
             
-        <div class="text-center"><img src='{{ rec.links.mission_patch }}' class="img-fluid img-thumbnail LaunchImg"></div>
+        <div class="text-center"><img [src]='rec.links.mission_patch' class="img-fluid img-thumbnail LaunchImg"></div>
             <div style="padding: 15px;">
                 <b style="color: #48519c;">
                     {{rec.mission_name +" #"}} {{rec.flight_number}}

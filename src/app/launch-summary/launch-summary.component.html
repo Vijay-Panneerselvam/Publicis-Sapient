@@ -9,7 +9,7 @@
           <div>
             <div class="text-center"><h6>Launch Year</h6><hr> </div>      
                 <span class="filterSec" *ngFor='let in of counter(13) ;let i = index; let odd = odd; let last = last'> 
-                    <button type="button" class="btn btn-success btn-sm" style="margin-bottom: 20px;" (click)="getlaunchYearRecs($event)">{{2008+i}}</button> 
+                    <button type="button" class="btn btn-success btn-sm" [class.active]="launch_year == 2008+i"  style="margin-bottom: 20px;" (click)="getlaunchYearRecs($event)">{{2008+i}}</button> 
                     <span *ngIf="odd"><br/></span>
                 </span>      
             </div> 
@@ -17,10 +17,10 @@
               <div class="text-center"><h6>Successful Launch</h6><hr></div>
               <div>
                 <div class="filterSec">
-                  <button type="button" class="btn btn-success  btn-sm" (click)="getLaunchFlagRecs($event)">True</button>
+                  <button type="button" class="btn btn-success  btn-sm" [class.active]="launch_success == 'true'" (click)="getLaunchFlagRecs($event)">True</button>
                 </div>
                 <div class="filterSec">
-                  <button type="button" class="btn btn-success  btn-sm" (click)="getLaunchFlagRecs($event)">False</button>          
+                  <button type="button" class="btn btn-success  btn-sm" [class.active]="launch_success == 'false'" (click)="getLaunchFlagRecs($event)">False</button>          
                 </div>
               </div>
             </div>
@@ -30,10 +30,10 @@
               
               <div>
                 <div class="filterSec">
-                  <button type="button" class="btn btn-success  btn-sm" (click)="getLandingFlagRecs($event)">True</button>
+                  <button type="button" class="btn btn-success  btn-sm" [class.active]="landing_success == 'true'" btnCheckboxTrue="1" btnCheckboxFalse="0" (click)="getLandingFlagRecs($event)">True</button>
                 </div>
                 <div class="filterSec">
-                  <button type="button" class="btn btn-success  btn-sm" (click)="getLandingFlagRecs($event)">False</button>
+                  <button type="button" class="btn btn-success  btn-sm" [class.active]="landing_success == 'false'" (click)="getLandingFlagRecs($event)">False</button>
                 </div>
               </div>
               <br/>

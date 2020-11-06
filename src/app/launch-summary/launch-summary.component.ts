@@ -41,19 +41,42 @@ export class LaunchSummaryComponent implements OnInit {
     this.SpinnerService.show();  
     this.service.getSpecificLaunchProg(this.launch_year, this.launch_success, this.landing_success).subscribe((Response) => {
       this.RecordDtls = Response;
+      var lRow = document.querySelectorAll(".yearRowBtns");
+      lRow.forEach(function(){
+
+      });
       this.SpinnerService.hide();
   });
   };
   getlaunchYearRecs(event: any){
-    this.launch_year = event.target.textContent;
+    event.target.classList.toggle('active');
+    if(event.target.classList.contains('active')){
+      this.launch_year = event.target.textContent;
+    }else{
+      this.launch_year = '';
+    }
+
+    
     this.getSpecificProgDtls();
   };
   getLaunchFlagRecs(event: any){
-    this.launch_success = (event.target.textContent).toLowerCase();
-    this.getSpecificProgDtls();
+    event.target.classList.toggle('active');
+    if(event.target.classList.contains('active')){ 
+      this.launch_success = (event.target.textContent).toLowerCase();
+    
+    }else{
+      this.launch_success = '';
+    }
+   this.getSpecificProgDtls();
   }
   getLandingFlagRecs(event: any){
-    this.landing_success = (event.target.textContent).toLowerCase();
+    event.target.classList.toggle('active');
+    if(event.target.classList.contains('active')){
+      this.landing_success = (event.target.textContent).toLowerCase();
+    }else{
+      this.landing_success = '';
+    }
+    
     this.getSpecificProgDtls();
   }
   constructor(private service:LaunchServicesService,private location: Location, private route: ActivatedRoute,private SpinnerService: NgxSpinnerService) { }
